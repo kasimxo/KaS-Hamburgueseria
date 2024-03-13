@@ -40,9 +40,6 @@ C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaE
 C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\bin\Debug\net6.0-windows\MyBurguerLib_Ex2.dll
 C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\bin\Debug\net6.0-windows\MyBurguerLib_Ex2.pdb
 C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.csproj.AssemblyReference.cache
-C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.MenuSuperiorUC.resources
-C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.MS_Button_Carta.resources
-C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.ProductoCard.resources
 C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.Login.resources
 C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.MainWindow.resources
 C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.Properties.Resources.resources
@@ -59,3 +56,4 @@ C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaE
 C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.pdb
 C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.genruntimeconfig.cache
 C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\ref\HamburgueseriaElJavi.dll
+C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.Componentes.ItemCartaUC.resources

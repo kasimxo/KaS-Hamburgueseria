@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HamburgueseriaElJavi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3988a051f05a7acec7a0d6e31d39a4df3ee827f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5107500b1b0a85d6845d5f922e43e5e95cebf1d1")]
 [assembly: System.Reflection.AssemblyProductAttribute("HamburgueseriaElJavi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HamburgueseriaElJavi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

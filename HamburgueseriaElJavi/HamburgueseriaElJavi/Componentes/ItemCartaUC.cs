@@ -8,14 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HamburgueseriaElJavi {
-    public partial class MS_Button_Carta : UserControl {
-        public MS_Button_Carta() {
+namespace HamburgueseriaElJavi.Componentes
+{
+    public partial class ItemCartaUC : UserControl
+    {
+        public ItemCartaUC()
+        {
             InitializeComponent();
         }
 
-        public void MS_Button_Carta_MouseClick(object sender, MouseEventArgs e) {
-            changeState();
+        public void nombre(string nombre)
+        {
+            nombreProducto.Text = nombre;
         }
     }
 }

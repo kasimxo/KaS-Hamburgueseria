@@ -1,7 +1,10 @@
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using HamburgueseriaElJavi.Componentes;
+using HamburgueseriaElJavi.Model;
 using MyBurguerLib_Ex2;
+using System.Windows.Forms;
 
 namespace HamburgueseriaElJavi {
     public partial class MainWindow : Form
@@ -24,20 +27,21 @@ namespace HamburgueseriaElJavi {
         public MainWindow()
         {
 
-
+            hamburguesas = new List<Hamburguesa>();
+            bebidas = new List<Bebida>();
+            patatas = new List<Patatas>();
 
             client = new FireSharp.FirebaseClient(config);
             InitializeComponent();
+
+            //cargarContenido();
         }
 
 
         private async void btn_ham_Click(object sender, EventArgs e)
         {
-            FirebaseResponse resp = await client.GetTaskAsync("Carta/");
-            if (resp != null)
-            {
-
-            }
+            
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -50,33 +54,122 @@ namespace HamburgueseriaElJavi {
             sincronizarHamburguesas();
             sincronizarBebidas();
             sincronizarPatatas();
+            
+        }
+
+        private void cargarHamburguesas()
+        {
+            foreach(Hamburguesa h in hamburguesas)
+            {
+                ItemCartaUC item = new ItemCartaUC();
+                item.nombre(h.nombreProducto);
+                item.Size = new System.Drawing.Size(table_hamburguesas.Size.Width-25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
+                table_hamburguesas.Controls.Add(item, 1, table_hamburguesas.RowCount - 1);
+                table_hamburguesas.RowCount++;
+            }
+            table_hamburguesas.RowCount--;
+        }
+
+        private void cargarBebidas()
+        {
+            foreach (Bebida b in bebidas)
+            {
+                ItemCartaUC item = new ItemCartaUC();
+                item.nombre(b.nombreProducto);
+                item.Size = new System.Drawing.Size(table_bebidas.Size.Width - 25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
+                table_bebidas.Controls.Add(item, 1, table_bebidas.RowCount - 1);
+                table_bebidas.RowCount++;
+            }
+            table_bebidas.RowCount--;
+        }
+
+        private void cargarPatatas()
+        {
+            foreach (Patatas p in patatas)
+            {
+                ItemCartaUC item = new ItemCartaUC();
+                item.nombre(p.nombreProducto);
+                item.Size = new System.Drawing.Size(table_patatas.Size.Width - 25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
+                table_patatas.Controls.Add(item, 1, table_patatas.RowCount - 1);
+                table_patatas.RowCount++;
+            }
+            table_patatas.RowCount--;
         }
 
         private async void sincronizarHamburguesas() {
-            FirebaseResponse resp = await client.GetTaskAsync("Carta/Hamburguesas/");
-            if (resp != null)
+            FirebaseResponse respNum = await client.GetTaskAsync("Carta/Hamburguesas/contador");
+            if (respNum != null)
             {
-
-            }
-        }
-        private async void sincronizarBebidas() {
-            FirebaseResponse resp = await client.GetTaskAsync("Carta/Bebidas/");
-            if (resp != null)
-            {
-
-            }
-        }
-        private async void sincronizarPatatas() {
-            FirebaseResponse resp = await client.GetTaskAsync("Carta/Patatas/");
-            if (resp != null)
-            {
-                resp.Body.GetEnumerator().MoveNext();
-                IEnumerable<Patatas> ite = resp.Body.Cast<Patatas>();
-                foreach(Patatas p in ite) {
-                    
-                    Console.WriteLine();
+                CntFB num = respNum.ResultAs<CntFB>(); //Numero de hamburguesas en la base de datos
+                for(int i = 1; i <= num.Cnt; i++)
+                {
+                    FirebaseResponse resp = await client.GetTaskAsync("Carta/Hamburguesas/H"+i);
+                    if (resp != null)
+                    {
+                        HamburguesaFB ham = resp.ResultAs<HamburguesaFB>();
+                        hamburguesas.Add(ham.toHamburguesa());
+                    }
                 }
             }
+            cargarHamburguesas();
+        }
+        private async void sincronizarBebidas() {
+            FirebaseResponse respNum = await client.GetTaskAsync("Carta/Bebidas/contador");
+            if (respNum != null)
+            {
+                CntFB num = respNum.ResultAs<CntFB>(); //Numero de bebidas en la base de datos
+                for (int i = 1; i <= num.Cnt; i++)
+                {
+                    FirebaseResponse resp = await client.GetTaskAsync("Carta/Bebidas/B" + i);
+                    if (resp != null)
+                    {
+                        BebidasFB ham = resp.ResultAs<BebidasFB>();
+                        bebidas.Add(ham.toBebida());
+                    }
+                }
+            }
+            cargarBebidas();
+        }
+        private async void sincronizarPatatas() {
+            FirebaseResponse respNum = await client.GetTaskAsync("Carta/Patatas/contador");
+            if (respNum != null)
+            {
+                CntFB num = respNum.ResultAs<CntFB>(); //Numero de patatas en la base de datos
+                for (int i = 1; i <= num.Cnt; i++)
+                {
+                    FirebaseResponse resp = await client.GetTaskAsync("Carta/Patatas/P" + i);
+                    if (resp != null)
+                    {
+                        PatatasFB ham = resp.ResultAs<PatatasFB>();
+                        patatas.Add(ham.toPatatas());
+                    }
+                }
+            }
+            cargarPatatas();
+        }
+
+        private async void images()
+        {
+
+            //Habría que meter en las clases un string de img
+            //Eso seria la imagen del producto en base 64
+            //Al crear el producto, se podría seleccionar la imagen del equipo y se meteria a firebase
+
+            MemoryStream ms = new MemoryStream();
+            //Image.Save(ms, ImageFormat.Png);
+
+            byte[] arr = ms.GetBuffer();
+            string output = Convert.ToBase64String(arr);
+            /*
+            var data = new Image_model
+            {
+                Img = output
+            };
+
+            SetResponse response = await client.SetTaskAsync();
+            Image_model result = response.ResultAs<Image_model>();
+            pBox.Image = null;
+            */
         }
     }
 }
