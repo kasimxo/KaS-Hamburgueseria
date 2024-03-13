@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\hamburgueseriaeljavi\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|solutionrelative:hamburgueseriaeljavi\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|c:\\desarrollo interfaces\\kas-hamburgueseria\\hamburgueseriaeljavi\\hamburgueseriaeljavi\\dbhandler\\firebasehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|solutionrelative:hamburgueseriaeljavi\\dbhandler\\firebasehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|c:\\desarrollo interfaces\\kas-hamburgueseria\\hamburgueseriaeljavi\\hamburgueseriaeljavi\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|solutionrelative:hamburgueseriaeljavi\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\hamburgueseriaeljavi\\views\\regform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|solutionrelative:hamburgueseriaeljavi\\views\\regform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FirebaseHandler.cs",
+              "DocumentMoniker": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\DBHandler\\FirebaseHandler.cs",
+              "RelativeDocumentMoniker": "HamburgueseriaElJavi\\DBHandler\\FirebaseHandler.cs",
+              "ToolTip": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\DBHandler\\FirebaseHandler.cs",
+              "RelativeToolTip": "HamburgueseriaElJavi\\DBHandler\\FirebaseHandler.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T12:47:45.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegForm.cs",
+              "DocumentMoniker": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\views\\RegForm.cs",
+              "RelativeDocumentMoniker": "HamburgueseriaElJavi\\views\\RegForm.cs",
+              "ToolTip": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\views\\RegForm.cs",
+              "RelativeToolTip": "HamburgueseriaElJavi\\views\\RegForm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T08:54:51.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.cs",
+              "DocumentMoniker": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\MainWindow.cs",
+              "RelativeDocumentMoniker": "HamburgueseriaElJavi\\MainWindow.cs",
+              "ToolTip": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\MainWindow.cs",
+              "RelativeToolTip": "HamburgueseriaElJavi\\MainWindow.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAswEwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T08:55:22.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.cs [Design]",
+              "DocumentMoniker": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\MainWindow.cs",
+              "RelativeDocumentMoniker": "HamburgueseriaElJavi\\MainWindow.cs",
+              "ToolTip": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\MainWindow.cs [Design]",
+              "RelativeToolTip": "HamburgueseriaElJavi\\MainWindow.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-13T08:55:22.251Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

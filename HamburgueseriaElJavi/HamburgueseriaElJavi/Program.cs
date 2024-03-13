@@ -15,8 +15,8 @@ namespace HamburgueseriaElJavi {
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            //MainWindow mW = new MainWindow();
-            Login mW = new Login();
+            MainWindow mW = new MainWindow();
+            //Login mW = new Login();
 
             Application.Run(mW);
 

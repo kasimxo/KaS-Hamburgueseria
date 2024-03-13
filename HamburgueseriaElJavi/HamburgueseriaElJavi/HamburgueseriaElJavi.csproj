@@ -10,11 +10,12 @@
 
   <ItemGroup>
     <PackageReference Include="FireSharp.Serialization.JsonNet" Version="1.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="MyBurguerLib_Ex2">
-      <HintPath>..\..\..\..\DAM\javi\MyBurguerLib_Ex2\obj\Debug\MyBurguerLib_Ex2.dll</HintPath>
+      <HintPath>..\..\..\SaveCopy\Proyecto AE1 Burguer_Consola - JAVIER REYES ÁLVAREZ\MyBurguerLib_Ex2\bin\Debug\MyBurguerLib_Ex2.dll</HintPath>
     </Reference>
   </ItemGroup>
 
