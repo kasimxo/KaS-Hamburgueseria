@@ -26,11 +26,13 @@ namespace HamburgueseriaElJavi.Componentes
         {
             InitializeComponent();
             producto = p;
+            cantidad = 0;
         }
 
         public void actualizarCantidad(int num)
         {
             cantidad = num;
+            Program.mW.actualizarTicket();
         }
 
         public void nombre(string nombre)

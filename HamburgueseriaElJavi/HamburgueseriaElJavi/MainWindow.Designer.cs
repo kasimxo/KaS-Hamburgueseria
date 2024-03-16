@@ -36,8 +36,8 @@ namespace HamburgueseriaElJavi {
             table_bebidas = new TableLayoutPanel();
             tab_patatas = new TabPage();
             table_patatas = new TableLayoutPanel();
-            button1 = new Button();
-            label1 = new Label();
+            btn_pagar = new Button();
+            tiket = new Label();
             carta.SuspendLayout();
             tab_hamburguesas.SuspendLayout();
             tab_bebidas.SuspendLayout();
@@ -123,31 +123,32 @@ namespace HamburgueseriaElJavi {
             table_patatas.Size = new Size(482, 392);
             table_patatas.TabIndex = 0;
             // 
-            // button1
+            // btn_pagar
             // 
-            button1.Location = new Point(713, 415);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += btn_ham_Click;
+            btn_pagar.Location = new Point(713, 415);
+            btn_pagar.Name = "btn_pagar";
+            btn_pagar.Size = new Size(75, 23);
+            btn_pagar.TabIndex = 1;
+            btn_pagar.Text = "Pagar";
+            btn_pagar.UseVisualStyleBackColor = true;
+            btn_pagar.Click += this.btn_pagarFunc;
             // 
-            // label1
+            // tiket
             // 
-            label1.Location = new Point(531, 36);
-            label1.Name = "label1";
-            label1.Size = new Size(257, 376);
-            label1.TabIndex = 2;
-            label1.Text = "label1";
+            tiket.Location = new Point(531, 36);
+            tiket.Name = "tiket";
+            tiket.Size = new Size(257, 376);
+            tiket.TabIndex = 2;
+            tiket.Text = "Ticket";
+            tiket.TextAlign = ContentAlignment.TopCenter;
             // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(tiket);
+            Controls.Add(btn_pagar);
             Controls.Add(carta);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainWindow";
@@ -166,10 +167,10 @@ namespace HamburgueseriaElJavi {
         private TabPage tab_hamburguesas;
         private TabPage tab_bebidas;
         private TabPage tab_patatas;
-        private Button button1;
+        private Button btn_pagar;
         private TableLayoutPanel table_hamburguesas;
         private TableLayoutPanel table_bebidas;
         private TableLayoutPanel table_patatas;
-        private Label label1;
+        private Label tiket;
     }
 }

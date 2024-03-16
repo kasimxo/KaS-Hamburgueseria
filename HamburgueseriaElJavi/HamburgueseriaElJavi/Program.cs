@@ -6,6 +6,8 @@ namespace HamburgueseriaElJavi {
         //Aqui gestionaremos la lista de productos
         public static List<Producto> productos;
 
+        public static MainWindow mW;
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -15,7 +17,7 @@ namespace HamburgueseriaElJavi {
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            MainWindow mW = new MainWindow();
+            mW = new MainWindow();
             //Login mW = new Login();
 
             Application.Run(mW);

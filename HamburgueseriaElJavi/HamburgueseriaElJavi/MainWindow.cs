@@ -3,7 +3,9 @@ using FireSharp.Interfaces;
 using FireSharp.Response;
 using HamburgueseriaElJavi.Componentes;
 using HamburgueseriaElJavi.Model;
+using HamburgueseriaElJavi.views;
 using MyBurguerLib_Ex2;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -15,8 +17,7 @@ namespace HamburgueseriaElJavi {
         public List<Bebida> bebidas;
         public List<Patatas> patatas;
 
-        //Este diccionario guarda el ticket, es decir, los productos y su cantidad
-        public Dictionary<Producto, int> ticket;
+        public decimal total;
 
 
         IFirebaseConfig config = new FirebaseConfig
@@ -37,14 +38,14 @@ namespace HamburgueseriaElJavi {
 
             client = new FireSharp.FirebaseClient(config);
             InitializeComponent();
-
+            total = 0;
             //cargarContenido();
         }
 
 
         private async void btn_ham_Click(object sender, EventArgs e)
         {
-            
+
             Console.WriteLine();
         }
 
@@ -58,18 +59,67 @@ namespace HamburgueseriaElJavi {
             sincronizarHamburguesas();
             sincronizarBebidas();
             sincronizarPatatas();
-            
+
+        }
+
+        /// <summary>
+        /// Actualiza toda la información del ticket
+        /// </summary>
+        public void actualizarTicket()
+        {
+            string texto = "Ticket\n\n";
+            int filasHamburguesas = table_hamburguesas.RowCount;
+            total = 0;
+            for (int i = 0; i < filasHamburguesas; i++)
+            {
+                ItemCartaUC icUC = (ItemCartaUC)table_hamburguesas.GetControlFromPosition(0, i);
+
+                if (icUC.cantidad > 0)
+                {
+                    decimal precio = Math.Round((decimal)(icUC.cantidad * icUC.producto.precio), 2);
+                    total += precio;
+                    texto += icUC.producto.NombreProducto + "    x " + icUC.cantidad + "    " + precio + " €\n";
+                }
+
+            }
+            int filasBebidas = table_bebidas.RowCount;
+            for (int i = 0; i < filasBebidas; i++)
+            {
+                ItemCartaUC icUC = (ItemCartaUC)table_bebidas.GetControlFromPosition(0, i);
+                if (icUC.cantidad > 0)
+                {
+                    decimal precio = Math.Round((decimal)(icUC.cantidad * icUC.producto.precio), 2);
+                    total += precio;
+                    texto += icUC.producto.NombreProducto + "    x " + icUC.cantidad + "    " + precio + " €\n";
+                }
+
+            }
+            int filasPatatas = table_patatas.RowCount;
+            for (int i = 0; i < filasPatatas; i++)
+            {
+                ItemCartaUC icUC = (ItemCartaUC)table_patatas.GetControlFromPosition(0, i);
+                if (icUC.cantidad > 0)
+                {
+                    decimal precio = Math.Round((decimal)(icUC.cantidad * icUC.producto.precio), 2);
+                    total += precio;
+                    texto += icUC.producto.NombreProducto + "    x " + icUC.cantidad + "    " + precio + " €\n";
+                }
+
+            }
+            texto += "\nTOTAL A PAGAR: " + total + " €";
+
+            tiket.Text = texto;
         }
 
         private void cargarHamburguesas()
         {
-            foreach(Hamburguesa h in hamburguesas)
+            foreach (Hamburguesa h in hamburguesas)
             {
                 ItemCartaUC item = new ItemCartaUC(h);
                 item.nombre(h.nombreProducto);
                 item.ingredientes(h.ListarIngredientes());
                 item.precio(h.precio.ToString() + " €");
-                item.Size = new System.Drawing.Size(table_hamburguesas.Size.Width-25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
+                item.Size = new System.Drawing.Size(table_hamburguesas.Size.Width - 25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
                 table_hamburguesas.Controls.Add(item, 1, table_hamburguesas.RowCount - 1);
                 table_hamburguesas.RowCount++;
             }
@@ -109,14 +159,15 @@ namespace HamburgueseriaElJavi {
             table_patatas.RowCount--;
         }
 
-        private async void sincronizarHamburguesas() {
+        private async void sincronizarHamburguesas()
+        {
             FirebaseResponse respNum = await client.GetTaskAsync("Carta/Hamburguesas/contador");
             if (respNum != null)
             {
                 CntFB num = respNum.ResultAs<CntFB>(); //Numero de hamburguesas en la base de datos
-                for(int i = 1; i <= num.Cnt; i++)
+                for (int i = 1; i <= num.Cnt; i++)
                 {
-                    FirebaseResponse resp = await client.GetTaskAsync("Carta/Hamburguesas/H"+i);
+                    FirebaseResponse resp = await client.GetTaskAsync("Carta/Hamburguesas/H" + i);
                     if (resp != null)
                     {
                         HamburguesaFB ham = resp.ResultAs<HamburguesaFB>();
@@ -126,7 +177,8 @@ namespace HamburgueseriaElJavi {
             }
             cargarHamburguesas();
         }
-        private async void sincronizarBebidas() {
+        private async void sincronizarBebidas()
+        {
             FirebaseResponse respNum = await client.GetTaskAsync("Carta/Bebidas/contador");
             if (respNum != null)
             {
@@ -143,7 +195,8 @@ namespace HamburgueseriaElJavi {
             }
             cargarBebidas();
         }
-        private async void sincronizarPatatas() {
+        private async void sincronizarPatatas()
+        {
             FirebaseResponse respNum = await client.GetTaskAsync("Carta/Patatas/contador");
             if (respNum != null)
             {
@@ -183,6 +236,12 @@ namespace HamburgueseriaElJavi {
             Image_model result = response.ResultAs<Image_model>();
             pBox.Image = null;
             */
+        }
+
+        private void btn_pagarFunc(object sender, EventArgs e)
+        {
+            Pagar pagar = new Pagar(tiket.Text, total);
+            pagar.Show();
         }
     }
 }
