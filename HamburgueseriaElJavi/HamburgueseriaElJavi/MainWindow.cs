@@ -4,6 +4,7 @@ using FireSharp.Response;
 using HamburgueseriaElJavi.Componentes;
 using HamburgueseriaElJavi.Model;
 using MyBurguerLib_Ex2;
+using System.Data;
 using System.Windows.Forms;
 
 namespace HamburgueseriaElJavi {
@@ -13,6 +14,9 @@ namespace HamburgueseriaElJavi {
         public List<Hamburguesa> hamburguesas;
         public List<Bebida> bebidas;
         public List<Patatas> patatas;
+
+        //Este diccionario guarda el ticket, es decir, los productos y su cantidad
+        public Dictionary<Producto, int> ticket;
 
 
         IFirebaseConfig config = new FirebaseConfig
@@ -61,8 +65,10 @@ namespace HamburgueseriaElJavi {
         {
             foreach(Hamburguesa h in hamburguesas)
             {
-                ItemCartaUC item = new ItemCartaUC();
+                ItemCartaUC item = new ItemCartaUC(h);
                 item.nombre(h.nombreProducto);
+                item.ingredientes(h.ListarIngredientes());
+                item.precio(h.precio.ToString() + " €");
                 item.Size = new System.Drawing.Size(table_hamburguesas.Size.Width-25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
                 table_hamburguesas.Controls.Add(item, 1, table_hamburguesas.RowCount - 1);
                 table_hamburguesas.RowCount++;
@@ -74,8 +80,11 @@ namespace HamburgueseriaElJavi {
         {
             foreach (Bebida b in bebidas)
             {
-                ItemCartaUC item = new ItemCartaUC();
+                ItemCartaUC item = new ItemCartaUC(b);
                 item.nombre(b.nombreProducto);
+                string ingredientesH = "Ingredientes: " + b.ListarIngredientes();
+                item.ingredientes(ingredientesH);
+                item.precio(b.precio.ToString() + " €");
                 item.Size = new System.Drawing.Size(table_bebidas.Size.Width - 25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
                 table_bebidas.Controls.Add(item, 1, table_bebidas.RowCount - 1);
                 table_bebidas.RowCount++;
@@ -87,8 +96,12 @@ namespace HamburgueseriaElJavi {
         {
             foreach (Patatas p in patatas)
             {
-                ItemCartaUC item = new ItemCartaUC();
+                ItemCartaUC item = new ItemCartaUC(p);
                 item.nombre(p.nombreProducto);
+                string ingredientesH = "Ingredientes: ";
+                ingredientesH += p.ListarIngredientes();
+                item.ingredientes(ingredientesH);
+                item.precio(p.precio.ToString() + " €");
                 item.Size = new System.Drawing.Size(table_patatas.Size.Width - 25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
                 table_patatas.Controls.Add(item, 1, table_patatas.RowCount - 1);
                 table_patatas.RowCount++;

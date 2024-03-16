@@ -37,6 +37,7 @@ namespace HamburgueseriaElJavi {
             tab_patatas = new TabPage();
             table_patatas = new TableLayoutPanel();
             button1 = new Button();
+            label1 = new Label();
             carta.SuspendLayout();
             tab_hamburguesas.SuspendLayout();
             tab_bebidas.SuspendLayout();
@@ -69,11 +70,11 @@ namespace HamburgueseriaElJavi {
             // 
             table_hamburguesas.AutoScroll = true;
             table_hamburguesas.ColumnCount = 1;
-            table_hamburguesas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            table_hamburguesas.ColumnStyles.Add(new ColumnStyle());
             table_hamburguesas.Location = new Point(6, 6);
             table_hamburguesas.Name = "table_hamburguesas";
             table_hamburguesas.RowCount = 1;
-            table_hamburguesas.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            table_hamburguesas.RowStyles.Add(new RowStyle());
             table_hamburguesas.Size = new Size(479, 386);
             table_hamburguesas.TabIndex = 0;
             // 
@@ -92,11 +93,11 @@ namespace HamburgueseriaElJavi {
             // 
             table_bebidas.AutoScroll = true;
             table_bebidas.ColumnCount = 1;
-            table_bebidas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            table_bebidas.ColumnStyles.Add(new ColumnStyle());
             table_bebidas.Location = new Point(6, 3);
             table_bebidas.Name = "table_bebidas";
             table_bebidas.RowCount = 1;
-            table_bebidas.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            table_bebidas.RowStyles.Add(new RowStyle());
             table_bebidas.Size = new Size(479, 389);
             table_bebidas.TabIndex = 0;
             // 
@@ -114,17 +115,17 @@ namespace HamburgueseriaElJavi {
             // 
             table_patatas.AutoScroll = true;
             table_patatas.ColumnCount = 1;
-            table_patatas.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            table_patatas.ColumnStyles.Add(new ColumnStyle());
             table_patatas.Location = new Point(3, 3);
             table_patatas.Name = "table_patatas";
             table_patatas.RowCount = 1;
-            table_patatas.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            table_patatas.RowStyles.Add(new RowStyle());
             table_patatas.Size = new Size(482, 392);
             table_patatas.TabIndex = 0;
             // 
             // button1
             // 
-            button1.Location = new Point(713, 36);
+            button1.Location = new Point(713, 415);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
@@ -132,11 +133,20 @@ namespace HamburgueseriaElJavi {
             button1.UseVisualStyleBackColor = true;
             button1.Click += btn_ham_Click;
             // 
+            // label1
+            // 
+            label1.Location = new Point(531, 36);
+            label1.Name = "label1";
+            label1.Size = new Size(257, 376);
+            label1.TabIndex = 2;
+            label1.Text = "label1";
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(carta);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -160,5 +170,6 @@ namespace HamburgueseriaElJavi {
         private TableLayoutPanel table_hamburguesas;
         private TableLayoutPanel table_bebidas;
         private TableLayoutPanel table_patatas;
+        private Label label1;
     }
 }

@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\hamburgueseriaeljavi\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|solutionrelative:hamburgueseriaeljavi\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|c:\\desarrollo interfaces\\kas-hamburgueseria\\hamburgueseriaeljavi\\hamburgueseriaeljavi\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|solutionrelative:hamburgueseriaeljavi\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|c:\\desarrollo interfaces\\kas-hamburgueseria\\hamburgueseriaeljavi\\hamburgueseriaeljavi\\model\\patatasfb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|solutionrelative:hamburgueseriaeljavi\\model\\patatasfb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\hamburgueseriaeljavi\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|solutionrelative:hamburgueseriaeljavi\\mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\hamburgueseriaeljavi\\componentes\\itemcartauc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|solutionrelative:hamburgueseriaeljavi\\componentes\\itemcartauc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|c:\\desarrollo interfaces\\kas-hamburgueseria\\hamburgueseriaeljavi\\hamburgueseriaeljavi\\componentes\\itemcartauc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|solutionrelative:hamburgueseriaeljavi\\componentes\\itemcartauc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|c:\\desarrollo interfaces\\kas-hamburgueseria\\hamburgueseriaeljavi\\hamburgueseriaeljavi\\componentes\\itemcartauc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|solutionrelative:hamburgueseriaeljavi\\componentes\\itemcartauc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\hamburgueseriaeljavi\\model\\patatasfb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88532C55-6BB1-4042-A10F-C61868C50544}|HamburgueseriaElJavi\\HamburgueseriaElJavi.csproj|solutionrelative:hamburgueseriaeljavi\\model\\patatasfb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -41,25 +41,25 @@
               "ToolTip": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\Componentes\\ItemCartaUC.cs [Design]",
               "RelativeToolTip": "HamburgueseriaElJavi\\Componentes\\ItemCartaUC.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T16:11:03.552Z",
+              "WhenOpened": "2024-03-16T17:10:25.326Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.cs",
               "DocumentMoniker": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\MainWindow.cs",
               "RelativeDocumentMoniker": "HamburgueseriaElJavi\\MainWindow.cs",
               "ToolTip": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\MainWindow.cs",
               "RelativeToolTip": "HamburgueseriaElJavi\\MainWindow.cs",
-              "ViewState": "AQIAAI4AAAAAAAAAAAAAAJ0AAAAxAAAA",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAwwEIAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-13T08:55:22.249Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainWindow.cs [Design]",
               "DocumentMoniker": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\MainWindow.cs",
               "RelativeDocumentMoniker": "HamburgueseriaElJavi\\MainWindow.cs",
@@ -71,20 +71,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "ItemCartaUC.cs",
               "DocumentMoniker": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\Componentes\\ItemCartaUC.cs",
               "RelativeDocumentMoniker": "HamburgueseriaElJavi\\Componentes\\ItemCartaUC.cs",
               "ToolTip": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\Componentes\\ItemCartaUC.cs",
               "RelativeToolTip": "HamburgueseriaElJavi\\Componentes\\ItemCartaUC.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAApAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABsAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-13T16:11:47.738Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "PatatasFB.cs",
               "DocumentMoniker": "C:\\Desarrollo Interfaces\\KaS-Hamburgueseria\\HamburgueseriaElJavi\\HamburgueseriaElJavi\\Model\\PatatasFB.cs",
               "RelativeDocumentMoniker": "HamburgueseriaElJavi\\Model\\PatatasFB.cs",
@@ -92,8 +92,7 @@
               "RelativeToolTip": "HamburgueseriaElJavi\\Model\\PatatasFB.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T15:32:37.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-13T15:32:37.802Z"
             }
           ]
         }
