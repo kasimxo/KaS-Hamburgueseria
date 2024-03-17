@@ -238,8 +238,27 @@ namespace HamburgueseriaElJavi {
             */
         }
 
+        public void reset() {
+            tiket.Text = "Ticket\n\n";
+            total = 0;
+            vaciarTablas();
+            sincronizarHamburguesas();
+            sincronizarBebidas();
+            sincronizarPatatas();
+        }
+
+        private void vaciarTablas()
+        {
+            table_bebidas.Controls.Clear();
+            table_hamburguesas.Controls.Clear();
+            table_patatas.Controls.Clear();
+        }
+
         private void btn_pagarFunc(object sender, EventArgs e)
         {
+            if (total <= 0) {
+                return;
+            }
             Pagar pagar = new Pagar(tiket.Text, total);
             pagar.Show();
         }

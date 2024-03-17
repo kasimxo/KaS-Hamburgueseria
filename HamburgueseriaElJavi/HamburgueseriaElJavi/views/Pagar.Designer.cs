@@ -35,6 +35,8 @@
             devolver = new Label();
             btn_calcular = new Button();
             button1 = new Button();
+            button2 = new Button();
+            folderBrowserDialog1 = new FolderBrowserDialog();
             SuspendLayout();
             // 
             // ticket
@@ -97,15 +99,26 @@
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 6;
-            button1.Text = "Cancelar";
+            button1.Text = "Volver";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(480, 415);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 7;
+            button2.Text = "Aceptar";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Pagar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(567, 450);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(btn_calcular);
             Controls.Add(devolver);
@@ -128,5 +141,7 @@
         private Label devolver;
         private Button btn_calcular;
         private Button button1;
+        private Button button2;
+        private FolderBrowserDialog folderBrowserDialog1;
     }
 }
