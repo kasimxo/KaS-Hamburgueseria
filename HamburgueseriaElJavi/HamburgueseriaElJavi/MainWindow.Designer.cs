@@ -38,6 +38,8 @@ namespace HamburgueseriaElJavi {
             table_patatas = new TableLayoutPanel();
             btn_pagar = new Button();
             tiket = new Label();
+            label1 = new Label();
+            cb_favoritos = new ComboBox();
             carta.SuspendLayout();
             tab_hamburguesas.SuspendLayout();
             tab_bebidas.SuspendLayout();
@@ -131,22 +133,41 @@ namespace HamburgueseriaElJavi {
             btn_pagar.TabIndex = 1;
             btn_pagar.Text = "Pagar";
             btn_pagar.UseVisualStyleBackColor = true;
-            btn_pagar.Click += this.btn_pagarFunc;
+            btn_pagar.Click += btn_pagarFunc;
             // 
             // tiket
             // 
-            tiket.Location = new Point(531, 36);
+            tiket.Location = new Point(531, 62);
             tiket.Name = "tiket";
-            tiket.Size = new Size(257, 376);
+            tiket.Size = new Size(257, 343);
             tiket.TabIndex = 2;
-            tiket.Text = "Ticket";
             tiket.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(568, 39);
+            label1.Name = "label1";
+            label1.Size = new Size(58, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Favoritos:";
+            // 
+            // cb_favoritos
+            // 
+            cb_favoritos.FormattingEnabled = true;
+            cb_favoritos.Location = new Point(632, 36);
+            cb_favoritos.Name = "cb_favoritos";
+            cb_favoritos.Size = new Size(139, 23);
+            cb_favoritos.TabIndex = 4;
+            cb_favoritos.SelectedIndexChanged += cb_favoritos_SelectedIndexChanged;
             // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(cb_favoritos);
+            Controls.Add(label1);
             Controls.Add(tiket);
             Controls.Add(btn_pagar);
             Controls.Add(carta);
@@ -159,6 +180,7 @@ namespace HamburgueseriaElJavi {
             tab_bebidas.ResumeLayout(false);
             tab_patatas.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -172,5 +194,7 @@ namespace HamburgueseriaElJavi {
         private TableLayoutPanel table_bebidas;
         private TableLayoutPanel table_patatas;
         private Label tiket;
+        private Label label1;
+        private ComboBox cb_favoritos;
     }
 }

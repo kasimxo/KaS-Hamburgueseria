@@ -37,14 +37,17 @@
             button1 = new Button();
             button2 = new Button();
             folderBrowserDialog1 = new FolderBrowserDialog();
+            esFavorito = new CheckBox();
+            label1 = new Label();
+            nombre_label = new Label();
+            nombre = new TextBox();
             SuspendLayout();
             // 
             // ticket
             // 
-            ticket.AutoSize = true;
-            ticket.Location = new Point(47, 18);
+            ticket.Location = new Point(12, 18);
             ticket.Name = "ticket";
-            ticket.Size = new Size(38, 15);
+            ticket.Size = new Size(212, 273);
             ticket.TabIndex = 0;
             ticket.Text = "label1";
             ticket.TextAlign = ContentAlignment.TopCenter;
@@ -52,7 +55,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(262, 56);
+            label3.Location = new Point(250, 56);
             label3.Name = "label3";
             label3.Size = new Size(100, 15);
             label3.TabIndex = 1;
@@ -61,7 +64,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(262, 123);
+            label2.Location = new Point(250, 123);
             label2.Name = "label2";
             label2.Size = new Size(115, 15);
             label2.TabIndex = 2;
@@ -95,7 +98,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(12, 415);
+            button1.Location = new Point(12, 329);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 6;
@@ -105,7 +108,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(480, 415);
+            button2.Location = new Point(480, 329);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 7;
@@ -113,11 +116,52 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // esFavorito
+            // 
+            esFavorito.AutoSize = true;
+            esFavorito.Location = new Point(389, 201);
+            esFavorito.Name = "esFavorito";
+            esFavorito.Size = new Size(15, 14);
+            esFavorito.TabIndex = 8;
+            esFavorito.UseVisualStyleBackColor = true;
+            esFavorito.CheckedChanged += esFavorito_CheckedChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(250, 200);
+            label1.Name = "label1";
+            label1.Size = new Size(130, 15);
+            label1.TabIndex = 9;
+            label1.Text = "Guardar como favorito:";
+            // 
+            // nombre_label
+            // 
+            nombre_label.AutoSize = true;
+            nombre_label.Location = new Point(250, 235);
+            nombre_label.Name = "nombre_label";
+            nombre_label.Size = new Size(110, 15);
+            nombre_label.TabIndex = 10;
+            nombre_label.Text = "Nombre de pedido:";
+            nombre_label.Visible = false;
+            // 
+            // nombre
+            // 
+            nombre.Location = new Point(389, 232);
+            nombre.Name = "nombre";
+            nombre.Size = new Size(100, 23);
+            nombre.TabIndex = 11;
+            nombre.Visible = false;
+            // 
             // Pagar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(567, 450);
+            ClientSize = new Size(567, 365);
+            Controls.Add(nombre);
+            Controls.Add(nombre_label);
+            Controls.Add(label1);
+            Controls.Add(esFavorito);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(btn_calcular);
@@ -143,5 +187,9 @@
         private Button button1;
         private Button button2;
         private FolderBrowserDialog folderBrowserDialog1;
+        private CheckBox esFavorito;
+        private Label label1;
+        private Label nombre_label;
+        private TextBox nombre;
     }
 }

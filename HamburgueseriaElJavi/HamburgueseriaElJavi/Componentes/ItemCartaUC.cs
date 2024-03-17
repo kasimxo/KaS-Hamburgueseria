@@ -29,9 +29,15 @@ namespace HamburgueseriaElJavi.Componentes
             cantidad = 0;
         }
 
+        public void resetCantidad()
+        {
+            cuantity.Text = "0";
+        }
+
         public void actualizarCantidad(int num)
         {
             cantidad = num;
+            cuantity.Text = num.ToString();
             Program.mW.actualizarTicket();
         }
 
@@ -55,8 +61,23 @@ namespace HamburgueseriaElJavi.Componentes
             int num;
             Int32.TryParse(cuantity.Text, out num);
             num++;
-            cuantity.Text = num.ToString();
+            
             actualizarCantidad(num);
+            if (Program.mW.productos.ContainsKey(producto))
+            {
+                if(cantidad == 0)
+                {
+                    Program.mW.productos.Remove(producto);
+                } else
+                {
+                    Program.mW.productos[producto] = cantidad;
+                }
+                
+            } else
+            {
+                Program.mW.productos.Add(producto, cantidad);
+            }
+            
         }
 
         private void btn_sub_Click(object sender, EventArgs e)
@@ -64,8 +85,23 @@ namespace HamburgueseriaElJavi.Componentes
             int num;
             Int32.TryParse(cuantity.Text, out num);
             if (num > 0) { num--; }
-            cuantity.Text = num.ToString();
             actualizarCantidad(num);
+            if (Program.mW.productos.ContainsKey(producto))
+            {
+                if (cantidad == 0)
+                {
+                    Program.mW.productos.Remove(producto);
+                }
+                else
+                {
+                    Program.mW.productos[producto] = cantidad;
+                }
+
+            }
+            else
+            {
+                Program.mW.productos.Add(producto, cantidad);
+            }
         }
     }
 }

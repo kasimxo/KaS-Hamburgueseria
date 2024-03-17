@@ -1,4 +1,5 @@
 using FireSharp.Config;
+using FireSharp.Extensions;
 using FireSharp.Interfaces;
 using FireSharp.Response;
 using HamburgueseriaElJavi.Componentes;
@@ -16,8 +17,12 @@ namespace HamburgueseriaElJavi {
         public List<Hamburguesa> hamburguesas;
         public List<Bebida> bebidas;
         public List<Patatas> patatas;
+        public List<FavoritoFB> listado_favoritos;
 
         public decimal total;
+
+        public Dictionary<string, ItemCartaUC> cartas;
+        public Dictionary<Producto, int> productos;
 
 
         IFirebaseConfig config = new FirebaseConfig
@@ -31,15 +36,18 @@ namespace HamburgueseriaElJavi {
 
         public MainWindow()
         {
-
+            listado_favoritos = new List<FavoritoFB>();
             hamburguesas = new List<Hamburguesa>();
             bebidas = new List<Bebida>();
             patatas = new List<Patatas>();
+            cartas = new Dictionary<string, ItemCartaUC>();
 
             client = new FireSharp.FirebaseClient(config);
             InitializeComponent();
             total = 0;
-            //cargarContenido();
+
+            productos = new Dictionary<Producto, int>();
+
         }
 
 
@@ -59,7 +67,7 @@ namespace HamburgueseriaElJavi {
             sincronizarHamburguesas();
             sincronizarBebidas();
             sincronizarPatatas();
-
+            cargarFavoritos();
         }
 
         /// <summary>
@@ -122,6 +130,7 @@ namespace HamburgueseriaElJavi {
                 item.Size = new System.Drawing.Size(table_hamburguesas.Size.Width - 25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
                 table_hamburguesas.Controls.Add(item, 1, table_hamburguesas.RowCount - 1);
                 table_hamburguesas.RowCount++;
+                cartas.Add(h.nombreProducto, item);
             }
             table_hamburguesas.RowCount--;
         }
@@ -138,6 +147,7 @@ namespace HamburgueseriaElJavi {
                 item.Size = new System.Drawing.Size(table_bebidas.Size.Width - 25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
                 table_bebidas.Controls.Add(item, 1, table_bebidas.RowCount - 1);
                 table_bebidas.RowCount++;
+                cartas.Add(b.nombreProducto, item);
             }
             table_bebidas.RowCount--;
         }
@@ -155,6 +165,7 @@ namespace HamburgueseriaElJavi {
                 item.Size = new System.Drawing.Size(table_patatas.Size.Width - 25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
                 table_patatas.Controls.Add(item, 1, table_patatas.RowCount - 1);
                 table_patatas.RowCount++;
+                cartas.Add(p.nombreProducto, item);
             }
             table_patatas.RowCount--;
         }
@@ -214,37 +225,37 @@ namespace HamburgueseriaElJavi {
             cargarPatatas();
         }
 
-        private async void images()
+        public void reset()
         {
-
-            //Habría que meter en las clases un string de img
-            //Eso seria la imagen del producto en base 64
-            //Al crear el producto, se podría seleccionar la imagen del equipo y se meteria a firebase
-
-            MemoryStream ms = new MemoryStream();
-            //Image.Save(ms, ImageFormat.Png);
-
-            byte[] arr = ms.GetBuffer();
-            string output = Convert.ToBase64String(arr);
-            /*
-            var data = new Image_model
-            {
-                Img = output
-            };
-
-            SetResponse response = await client.SetTaskAsync();
-            Image_model result = response.ResultAs<Image_model>();
-            pBox.Image = null;
-            */
-        }
-
-        public void reset() {
             tiket.Text = "Ticket\n\n";
             total = 0;
-            vaciarTablas();
-            sincronizarHamburguesas();
-            sincronizarBebidas();
-            sincronizarPatatas();
+            productos.Clear();
+            int filasHamburguesas = table_hamburguesas.RowCount;
+            for (int i = 0; i < filasHamburguesas; i++)
+            {
+                ItemCartaUC icUC = (ItemCartaUC)table_hamburguesas.GetControlFromPosition(0, i);
+                icUC.cantidad = 0;
+                icUC.resetCantidad();
+
+            }
+            int filasBebidas = table_bebidas.RowCount;
+            for (int i = 0; i < filasBebidas; i++)
+            {
+                ItemCartaUC icUC = (ItemCartaUC)table_bebidas.GetControlFromPosition(0, i);
+                icUC.cantidad = 0;
+                icUC.resetCantidad();
+
+            }
+            int filasPatatas = table_patatas.RowCount;
+            for (int i = 0; i < filasPatatas; i++)
+            {
+                ItemCartaUC icUC = (ItemCartaUC)table_patatas.GetControlFromPosition(0, i);
+                icUC.cantidad = 0;
+                icUC.resetCantidad();
+
+            }
+            cb_favoritos.Items.Clear();
+            cargarFavoritos();
         }
 
         private void vaciarTablas()
@@ -256,11 +267,65 @@ namespace HamburgueseriaElJavi {
 
         private void btn_pagarFunc(object sender, EventArgs e)
         {
-            if (total <= 0) {
+            if (total <= 0)
+            {
                 return;
             }
-            Pagar pagar = new Pagar(tiket.Text, total);
+            Pagar pagar = new Pagar(tiket.Text, total, productos);
             pagar.Show();
+        }
+
+        public async void cargarFavoritos()
+        {
+            FirebaseResponse respNum = await client.GetTaskAsync("Tickets/favoritos/contador");
+            if (respNum != null)
+            {
+
+                CntFB num = respNum.ResultAs<CntFB>();
+                for (int i = 1; i <= num.Cnt; i++)
+                {
+
+                    FirebaseResponse resp = await client.GetTaskAsync("Tickets/favoritos/T" + i);
+                    if (resp != null)
+                    {
+                        try
+                        {
+                            FavoritoFB ffb = resp.ResultAs<FavoritoFB>();
+                            cb_favoritos.Items.Add(ffb.name);
+                            listado_favoritos.Add(ffb);
+                        }
+                        catch (Exception ex)
+                        { }
+                    }
+
+                }
+
+            }
+        }
+
+        private void cb_favoritos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selected = cb_favoritos.Text;
+            foreach(FavoritoFB ffb in listado_favoritos)
+            {
+                if (ffb.name.Equals(selected))
+                {
+                    cargarPedidoFavorito(ffb.productos);
+                }
+            }
+        }
+
+        private void cargarPedidoFavorito(string listado)
+        {
+            string[] productosSeparados = listado.Remove(listado.Length-1).Split(";");
+
+            foreach (string ps in productosSeparados)
+            {
+                string[] detalle = ps.Split(":");
+
+                cartas[detalle[0]].actualizarCantidad(Int32.Parse(detalle[1]));
+
+            }
         }
     }
 }
