@@ -40,6 +40,8 @@ namespace HamburgueseriaElJavi {
             tiket = new Label();
             label1 = new Label();
             cb_favoritos = new ComboBox();
+            btn_limpiar = new Button();
+            button1 = new Button();
             carta.SuspendLayout();
             tab_hamburguesas.SuspendLayout();
             tab_bebidas.SuspendLayout();
@@ -73,11 +75,11 @@ namespace HamburgueseriaElJavi {
             table_hamburguesas.AutoScroll = true;
             table_hamburguesas.ColumnCount = 1;
             table_hamburguesas.ColumnStyles.Add(new ColumnStyle());
-            table_hamburguesas.Location = new Point(6, 6);
+            table_hamburguesas.Location = new Point(6, 3);
             table_hamburguesas.Name = "table_hamburguesas";
             table_hamburguesas.RowCount = 1;
             table_hamburguesas.RowStyles.Add(new RowStyle());
-            table_hamburguesas.Size = new Size(479, 386);
+            table_hamburguesas.Size = new Size(476, 389);
             table_hamburguesas.TabIndex = 0;
             // 
             // tab_bebidas
@@ -100,7 +102,7 @@ namespace HamburgueseriaElJavi {
             table_bebidas.Name = "table_bebidas";
             table_bebidas.RowCount = 1;
             table_bebidas.RowStyles.Add(new RowStyle());
-            table_bebidas.Size = new Size(479, 389);
+            table_bebidas.Size = new Size(476, 389);
             table_bebidas.TabIndex = 0;
             // 
             // tab_patatas
@@ -161,11 +163,33 @@ namespace HamburgueseriaElJavi {
             cb_favoritos.TabIndex = 4;
             cb_favoritos.SelectedIndexChanged += cb_favoritos_SelectedIndexChanged;
             // 
+            // btn_limpiar
+            // 
+            btn_limpiar.Location = new Point(531, 415);
+            btn_limpiar.Name = "btn_limpiar";
+            btn_limpiar.Size = new Size(75, 23);
+            btn_limpiar.TabIndex = 5;
+            btn_limpiar.Text = "Limpiar";
+            btn_limpiar.UseVisualStyleBackColor = true;
+            btn_limpiar.Click += btn_limpiar_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(618, 415);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 6;
+            button1.Text = "Historial";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
+            Controls.Add(btn_limpiar);
             Controls.Add(cb_favoritos);
             Controls.Add(label1);
             Controls.Add(tiket);
@@ -196,5 +220,7 @@ namespace HamburgueseriaElJavi {
         private Label tiket;
         private Label label1;
         private ComboBox cb_favoritos;
+        private Button btn_limpiar;
+        private Button button1;
     }
 }

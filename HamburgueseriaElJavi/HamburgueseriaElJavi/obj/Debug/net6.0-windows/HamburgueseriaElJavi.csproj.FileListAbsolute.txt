@@ -58,3 +58,4 @@ C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaE
 C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\ref\HamburgueseriaElJavi.dll
 C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.Componentes.ItemCartaUC.resources
 C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.views.Pagar.resources
+C:\Desarrollo Interfaces\KaS-Hamburgueseria\HamburgueseriaElJavi\HamburgueseriaElJavi\obj\Debug\net6.0-windows\HamburgueseriaElJavi.views.Historial.resources

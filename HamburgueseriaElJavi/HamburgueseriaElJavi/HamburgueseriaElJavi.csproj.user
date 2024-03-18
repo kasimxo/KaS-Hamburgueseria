@@ -4,6 +4,9 @@
     <Compile Update="Componentes\ItemCartaUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="views\Historial.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="views\Login.cs">
       <SubType>Form</SubType>
     </Compile>

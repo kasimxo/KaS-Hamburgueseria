@@ -40,7 +40,7 @@
             // 
             nombreProducto.AutoSize = true;
             nombreProducto.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            nombreProducto.Location = new Point(88, 11);
+            nombreProducto.Location = new Point(13, 11);
             nombreProducto.Name = "nombreProducto";
             nombreProducto.Size = new Size(72, 30);
             nombreProducto.TabIndex = 0;
@@ -48,17 +48,18 @@
             // 
             // ingredientesProducto
             // 
-            ingredientesProducto.Location = new Point(88, 58);
+            ingredientesProducto.Location = new Point(13, 56);
             ingredientesProducto.Name = "ingredientesProducto";
-            ingredientesProducto.Size = new Size(172, 82);
+            ingredientesProducto.Size = new Size(188, 67);
             ingredientesProducto.TabIndex = 1;
             ingredientesProducto.Text = "label1";
             // 
             // precioProducto
             // 
+            precioProducto.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             precioProducto.AutoSize = true;
             precioProducto.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            precioProducto.Location = new Point(367, 16);
+            precioProducto.Location = new Point(337, 11);
             precioProducto.Name = "precioProducto";
             precioProducto.Size = new Size(63, 25);
             precioProducto.TabIndex = 2;
@@ -66,7 +67,8 @@
             // 
             // btn_add
             // 
-            btn_add.Location = new Point(403, 217);
+            btn_add.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_add.Location = new Point(390, 100);
             btn_add.Name = "btn_add";
             btn_add.Size = new Size(24, 23);
             btn_add.TabIndex = 3;
@@ -76,7 +78,8 @@
             // 
             // btn_sub
             // 
-            btn_sub.Location = new Point(337, 217);
+            btn_sub.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_sub.Location = new Point(324, 100);
             btn_sub.Name = "btn_sub";
             btn_sub.Size = new Size(24, 23);
             btn_sub.TabIndex = 4;
@@ -86,8 +89,9 @@
             // 
             // cuantity
             // 
+            cuantity.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             cuantity.BackColor = Color.White;
-            cuantity.Location = new Point(367, 217);
+            cuantity.Location = new Point(354, 100);
             cuantity.Name = "cuantity";
             cuantity.Size = new Size(30, 23);
             cuantity.TabIndex = 5;
@@ -106,7 +110,7 @@
             Controls.Add(ingredientesProducto);
             Controls.Add(nombreProducto);
             Name = "ItemCartaUC";
-            Size = new Size(443, 250);
+            Size = new Size(429, 145);
             ResumeLayout(false);
             PerformLayout();
         }

@@ -127,7 +127,7 @@ namespace HamburgueseriaElJavi {
                 item.nombre(h.nombreProducto);
                 item.ingredientes(h.ListarIngredientes());
                 item.precio(h.precio.ToString() + " €");
-                item.Size = new System.Drawing.Size(table_hamburguesas.Size.Width - 25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
+                item.Size = new System.Drawing.Size(table_hamburguesas.Size.Width - 30, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
                 table_hamburguesas.Controls.Add(item, 1, table_hamburguesas.RowCount - 1);
                 table_hamburguesas.RowCount++;
                 cartas.Add(h.nombreProducto, item);
@@ -144,7 +144,7 @@ namespace HamburgueseriaElJavi {
                 string ingredientesH = "Ingredientes: " + b.ListarIngredientes();
                 item.ingredientes(ingredientesH);
                 item.precio(b.precio.ToString() + " €");
-                item.Size = new System.Drawing.Size(table_bebidas.Size.Width - 25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
+                item.Size = new System.Drawing.Size(table_bebidas.Size.Width - 30, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
                 table_bebidas.Controls.Add(item, 1, table_bebidas.RowCount - 1);
                 table_bebidas.RowCount++;
                 cartas.Add(b.nombreProducto, item);
@@ -162,7 +162,7 @@ namespace HamburgueseriaElJavi {
                 ingredientesH += p.ListarIngredientes();
                 item.ingredientes(ingredientesH);
                 item.precio(p.precio.ToString() + " €");
-                item.Size = new System.Drawing.Size(table_patatas.Size.Width - 25, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
+                item.Size = new System.Drawing.Size(table_patatas.Size.Width - 30, item.Size.Height); //Ajustamos el ancho del user controll al ancho de la tabla
                 table_patatas.Controls.Add(item, 1, table_patatas.RowCount - 1);
                 table_patatas.RowCount++;
                 cartas.Add(p.nombreProducto, item);
@@ -306,7 +306,7 @@ namespace HamburgueseriaElJavi {
         private void cb_favoritos_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selected = cb_favoritos.Text;
-            foreach(FavoritoFB ffb in listado_favoritos)
+            foreach (FavoritoFB ffb in listado_favoritos)
             {
                 if (ffb.name.Equals(selected))
                 {
@@ -317,7 +317,7 @@ namespace HamburgueseriaElJavi {
 
         private void cargarPedidoFavorito(string listado)
         {
-            string[] productosSeparados = listado.Remove(listado.Length-1).Split(";");
+            string[] productosSeparados = listado.Remove(listado.Length - 1).Split(";");
 
             foreach (string ps in productosSeparados)
             {
@@ -326,6 +326,17 @@ namespace HamburgueseriaElJavi {
                 cartas[detalle[0]].actualizarCantidad(Int32.Parse(detalle[1]));
 
             }
+        }
+
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Historial h = new Historial();
+            h.Show();
         }
     }
 }
